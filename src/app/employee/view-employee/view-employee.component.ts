@@ -11,6 +11,9 @@ import { EmployeeService } from 'src/app/service/EmployeeService';
 export class ViewEmployeeComponent implements OnInit {
   employees:any;
   message: any;
+  searchText:any;
+  p:number=1;
+  count:number=10;
 
   constructor(private viewEmployeeService:EmployeeService) { }
 

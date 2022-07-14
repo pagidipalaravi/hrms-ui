@@ -17,6 +17,8 @@ import { EmployeeService } from './service/EmployeeService';
 import { FormsModule } from '@angular/forms';
 import { AboutusComponent } from './navigation/bottom-navigation/aboutus/aboutus.component';
 import { ContactComponent } from './navigation/bottom-navigation/contact/contact.component'
+import { NgxPaginationModule } from 'ngx-pagination';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 
 
@@ -42,9 +44,10 @@ import { ContactComponent } from './navigation/bottom-navigation/contact/contact
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    
+    NgxPaginationModule,
+    Ng2SearchPipeModule
+],
 
-  ],
   providers: [EmployeeService],
   bootstrap: [AppComponent]
 })
