@@ -1,1 +1,29 @@
-<p>top-navigation works!</p>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top ">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/home">
+      <img src="assets/images/aktrix_logo.png" alt="Aktrix Logo"  class="rounded-pill">
+
+    </a>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link text-white" routerLink="/home">Home<i class="fa-regular fa-house-blank"></i></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" routerLink="/createEmployee">Create Employee</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" routerLink="/viewEmployee">View Employee</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="">Login<i class="fa-regular fa-user"></i></a>
+        </li>
+      </ul>
+    </div>
+      <form class="d-flex">
+        <input class="form-control me-2" type="text" placeholder="Search">
+        <button class="btn btn-primary" type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </form>
+    
+  </div>
+</nav>
