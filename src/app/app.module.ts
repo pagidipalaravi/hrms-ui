@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { TopNavigationComponent } from './navigation/top-navigation/top-navigation.component';
@@ -19,6 +20,7 @@ import { AboutusComponent } from './navigation/bottom-navigation/aboutus/aboutus
 import { ContactComponent } from './navigation/bottom-navigation/contact/contact.component'
 import { NgxPaginationModule } from 'ngx-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
 
 
 
