@@ -6,40 +6,40 @@
                 <div class="col-md-6">
                     <label>First Name<sup style="color:red">*</sup></label>
                     <input id="firstName" type="text" placeholder="Enter First Name" required minlength="5"
-                        maxlength="20" name="firstName" ngModel #firstName="ngModel">
+                        maxlength="20" name="firstName" ngModel>
                 </div>
 
                 <div class="col-md-6">
                     <label>Last Name<sup style="color:red">*</sup></label>
                     <input id="lastName" type="text" placeholder="Enter Last Name" required minlength="5" maxlength="20"
-                        name="lastName" ngModel #lastName="ngModel">
+                         name="lastName" ngModel >
                 </div>
 
                 <div class="col-md-6">
                     <label>e-Mail<sup style="color:red">*</sup></label>
-                    <input id="email" type="email" placeholder="Enter e-Mail ID" required name="email" ngModel #email="ngModel">
+                    <input id="email" type="email" placeholder="Enter e-Mail ID" required name="email" ngModel >
                 </div>
 
                 <div class="col-md-6">
                     <label>Phone Number<sup style="color:red">*</sup></label>
                     <input id="phoneNumber" type="tel" placeholder="Enter Phone Number" required minlength="10"
-                        maxlength="14" name="email" ngModel #phoneNumber="ngModel">
+                        maxlength="14" name="email" ngModel>
                 </div>
 
                 <div class="col-md-6">
                     <label>Hire Date<sup style="color:red">*</sup></label>
                     <input id="hireDate" type="date" placeholder="Select Date of Hiring" required minlength="5"
-                        maxlength="20" name="hireDate" ngModel #hireDate="ngModel">
+                        maxlength="20" name="hireDate" ngModel >
                 </div>
 
                 <div class="col-md-6">
                     <label>Salary<sup style="color:red">*</sup></label>
-                    <input id="salary" type="number" placeholder="Enter Salary" required minlength="5" name="salary" ngModel #salary="ngModel">
+                    <input id="salary" type="number" placeholder="Enter Salary" required minlength="5" name="salary" ngModel>
                 </div>
 
-                <div class="col-md-6">
+                <!--<div class="col-md-6">
                     <label>Job Name<sup style="color:red">*</sup></label>
-                    <select id="jobId" type="text" placeholder="Select Job Name" name="jobId" ngModel #jobId="ngModel">
+                    <select id="jobId" type="text" placeholder="Select Job Name" name="jobId" ngModel>
                         <option *ngFor="let job of jobs; let i=index">
                             {{job.jobTitle}}</option>
                     </select>
@@ -47,7 +47,7 @@
 
                 <div class="col-md-6">
                     <label>Department Name<sup style="color:red">*</sup></label>
-                    <select id="departmentId" type="text" placeholder="Select Department Name" name="departmentName" ngModel #departmentId="ngModel">
+                    <select id="departmentId" type="text" placeholder="Select Department Name" name="departmentName" ngModel>
                         <option *ngFor="let department of departments; let i=index">
                             {{department.departmentName}
                         </option>
@@ -56,15 +56,15 @@
 
                 <div class="col-md-6">
                     <label>Manager Name<sup style="color:red">*</sup></label>
-                    <select id="managerId" type="text" placeholder="select Manager Name" name="managerId" ngModel #managerId="ngModel">
+                    <select id="managerId" type="text" placeholder="select Manager Name" name="managerId" ngModel>
                         <option *ngFor="let manager of managers; let i=index">
                             {{manager.managerName}}
                         </option>
                     </select>
-                </div>
+                </div>-->
 
                 <div>
-                    <button type="submit" class="btn btn-primary" ngSubmit (click)="onSubmit()">
+                    <button type="submit" class="btn btn-primary" ngSubmit>
                         Submit
                     </button>
                 </div>

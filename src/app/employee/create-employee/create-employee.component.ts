@@ -9,6 +9,9 @@ import { EmployeeService } from 'src/app/service/EmployeeService';
 })
 export class CreateEmployeeComponent implements OnInit {
   employee:any;
+  jobs:any=[];
+  departments:any=[];
+  managers:any=[];
   constructor(private createEmployeeService : EmployeeService) { }
 
   ngOnInit(): void {
