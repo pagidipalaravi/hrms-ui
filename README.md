@@ -27,9 +27,14 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
 ## github instructions
-Clone from main brach only
-Create a new branch (user-branch) on top of main branch
-Commit your changes to user-branch
-Create a pull request to dev branch
-Slove the conflicts if any
-Merge the user-baranch with dev
+Clone from main brach only.
+
+Create a new branch (user-branch) on top of main branch.
+
+Commit your changes to user-branch.
+
+Create a pull request to dev branch.
+
+Slove the conflicts if any.
+
+Merge the user-baranch with dev.
