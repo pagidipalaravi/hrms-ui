@@ -1,1 +1,80 @@
-<p>create-employee works!</p>
+<div class="container-fluid ">
+    <h2 style="background-color:rgb(160, 219, 105)">Registration Form</h2>
+    <form name="Employee Form">
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-6">
+                    <label>First Name<sup style="color:red">*</sup></label>
+                    <input id="firstName" type="text" placeholder="Enter First Name" required minlength="5"
+                        maxlength="20" name="firstName" ngModel>
+                </div>
+
+                <div class="col-md-6">
+                    <label>Last Name<sup style="color:red">*</sup></label>
+                    <input id="lastName" type="text" placeholder="Enter Last Name" required minlength="5" maxlength="20"
+                         name="lastName" ngModel >
+                </div>
+
+                <div class="col-md-6">
+                    <label>e-Mail<sup style="color:red">*</sup></label>
+                    <input id="email" type="email" placeholder="Enter e-Mail ID" required name="email" ngModel >
+                </div>
+
+                <div class="col-md-6">
+                    <label>Phone Number<sup style="color:red">*</sup></label>
+                    <input id="phoneNumber" type="tel" placeholder="Enter Phone Number" required minlength="10"
+                        maxlength="14" name="email" ngModel>
+                </div>
+
+                <div class="col-md-6">
+                    <label>Hire Date<sup style="color:red">*</sup></label>
+                    <input id="hireDate" type="date" placeholder="Select Date of Hiring" required minlength="5"
+                        maxlength="20" name="hireDate" ngModel >
+                </div>
+
+                <div class="col-md-6">
+                    <label>Salary<sup style="color:red">*</sup></label>
+                    <input id="salary" type="number" placeholder="Enter Salary" required minlength="5" name="salary" ngModel>
+                </div>
+
+                <!--<div class="col-md-6">
+                    <label>Job Name<sup style="color:red">*</sup></label>
+                    <select id="jobId" type="text" placeholder="Select Job Name" name="jobId" ngModel>
+                        <option *ngFor="let job of jobs; let i=index">
+                            {{job.jobTitle}}</option>
+                    </select>
+                </div>
+
+                <div class="col-md-6">
+                    <label>Department Name<sup style="color:red">*</sup></label>
+                    <select id="departmentId" type="text" placeholder="Select Department Name" name="departmentName" ngModel>
+                        <option *ngFor="let department of departments; let i=index">
+                            {{department.departmentName}
+                        </option>
+                    </select>
+                </div>
+
+                <div class="col-md-6">
+                    <label>Manager Name<sup style="color:red">*</sup></label>
+                    <select id="managerId" type="text" placeholder="select Manager Name" name="managerId" ngModel>
+                        <option *ngFor="let manager of managers; let i=index">
+                            {{manager.managerName}}
+                        </option>
+                    </select>
+                </div>-->
+
+                <div>
+                    <button type="submit" class="btn btn-primary" ngSubmit>
+                        Submit
+                    </button>
+                </div>
+
+
+
+            </div>
+        </div>
+
+    </form>
+
+
+</div>
