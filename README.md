@@ -26,15 +26,16 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
-## github instructions
+## Github Instructions
+
 Clone from main brach only.
 
-Create a new branch (user-branch) on top of main branch.
+Create a new branch with jira-ticket on top of main branch.
 
-Commit your changes to user-branch.
+Commit your changes to jira-ticket branch.
 
-Create a pull request to dev branch.
+Create a pull request to dev branch from jira-ticket.
 
-Slove the conflicts if any.
+Solve the conflicts if any.
 
 Merge the user-baranch with dev.
