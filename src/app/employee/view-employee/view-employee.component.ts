@@ -13,7 +13,7 @@ export class ViewEmployeeComponent implements OnInit {
   message: any;
   searchText:any;
   p:number=1;
-  count:number=10;
+  count:number=50;
 
   constructor(private viewEmployeeService:EmployeeService) { }
 
