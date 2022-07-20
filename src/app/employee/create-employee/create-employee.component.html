@@ -11,7 +11,6 @@
                 <label for="FirstName" class="form-label">First Name</label>
                 <input type="text" placeholder="Enter the First Name" class="form-control" id="FirstName"
                     name="firstName" ngModel #firstName="ngModel" required minlength="5" autocomplete="off">
-
                 <span *ngIf="firstName.touched && !firstName.valid">First Name Required</span>
                 <span *ngIf="firstName.errors?.['minlength']">Name must be at least 5 characters long.</span>
             </div>
@@ -42,7 +41,6 @@
                     required>
                 <span *ngIf="hireDate.touched && !hireDate.valid">Select the Date</span>
             </div>
-
             <div class="mb-3">
                 <label for="Salary" class="form-label">Salary</label>
                 <input type="number" placeholder="Salary" class="form-control" id="Salary" name="salary" ngModel
@@ -71,7 +69,6 @@
                 </select>
                 <span *ngIf="jobId.touched && !jobId.valid">Select the Job Id</span>
             </div>
-
             <div class="mb-3">
                 <label for="ManagerId" class="form-label">Manager Id</label>
                 <select class="form-select " name="managerId" ngModel #managerId="ngModel" required>
@@ -109,11 +106,7 @@
                 </select>
                 <span *ngIf="departmentId.touched && !departmentId.valid">Select the Department Id</span>
             </div>
-
-
         </div>
     </div>
-
     <button class="btn btn-primary " [disabled]="!createEmployeeForm.valid">Submit</button>
-
 </form>

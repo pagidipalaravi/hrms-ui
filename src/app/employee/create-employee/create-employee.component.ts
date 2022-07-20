@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { observable } from 'rxjs';
 import { EmployeeBean } from 'src/app/Bean/employeeBean';
 import { EmployeeService } from 'src/app/service/EmployeeService';
-
 
 @Component({
   selector: 'app-create-employee',
@@ -35,18 +33,15 @@ export class CreateEmployeeComponent implements OnInit {
       data => {
         if (data.status === 200) {
           alert("Employees are created successfuly");
- }
-}
+        }
         else {
           this.message = data.statusText;
         }
       },
       error => {
-
         this.message = error.message;
         console.error(error);
       }
     );
-
   }
 }
