@@ -1,1 +1,112 @@
-<p>create-employee works!</p>
+<form #createEmployeeForm="ngForm" (ngSubmit)="onSubmit(createEmployeeForm)">
+    <div class="row pt-5">
+        <div class="col-6 ">
+            <div class="mb-3">
+                <label for="EmployeeId" class="form-label">Employee Id</label>
+                <input type="number" placeholder="Enter the EmployeeId" class="form-control" id="EmployeeId"
+                    name="employeeId" ngModel #employeeId="ngModel" required>
+                <span *ngIf="employeeId.touched && !employeeId.valid">Enter the EmployeeId</span>
+            </div>
+            <div class="mb-3">
+                <label for="FirstName" class="form-label">First Name</label>
+                <input type="text" placeholder="Enter the First Name" class="form-control" id="FirstName"
+                    name="firstName" ngModel #firstName="ngModel" required minlength="5" autocomplete="off">
+                <span *ngIf="firstName.touched && !firstName.valid">First Name Required</span>
+                <span *ngIf="firstName.errors?.['minlength']">Name must be at least 5 characters long.</span>
+            </div>
+            <div class="mb-3">
+                <label for="LastName" class="form-label">Last Name</label>
+                <input type="text" placeholder="Enter the Last Name" class="form-control" id="LastName" name="lastName"
+                    ngModel #lastName="ngModel" required>
+                <span *ngIf="lastName.touched && !lastName.valid">Last Name Required</span>
+            </div>
+            <div class="mb-3">
+                <label for="Email" class="form-label">Email</label>
+                <input type="text" placeholder="Enter the Email" class="form-control" id="Email" name="email" ngModel
+                    #email="ngModel" required>
+                <span *ngIf="email.touched && !email.valid">Enter the Email</span>
+            </div>
+
+            <div class="mb-3">
+                <label for="PhoneNumber" class="form-label">Phone Number</label>
+                <input type="number" placeholder="Enter the Phone Number" class="form-control" id="PhoneNumber"
+                    maxlength="10" name="phoneNumber" ngModel #phoneNumber="ngModel" required>
+                <span *ngIf="phoneNumber.touched && !phoneNumber.valid">Enter the phone Number</span>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="mb-3">
+                <label for="HireDate" class="form-label">Hire Date</label>
+                <input type="date" class="form-control" id="HireDate" name="hireDate" ngModel #hireDate="ngModel"
+                    required>
+                <span *ngIf="hireDate.touched && !hireDate.valid">Select the Date</span>
+            </div>
+            <div class="mb-3">
+                <label for="Salary" class="form-label">Salary</label>
+                <input type="number" placeholder="Salary" class="form-control" id="Salary" name="salary" ngModel
+                    #salary="ngModel" required>
+                <span *ngIf="salary.touched && !salary.valid">Enter the salary</span>
+            </div>
+            <div class="mb-3">
+                <label for="JobId" class="form-label">Job Id</label>
+                <select class="form-select" aria-label="Default select example" name="jobId" ngModel #jobId="ngModel"
+                    required>
+                    <option value="AD_PRES">AD_PRES</option>
+                    <option value="MK_REP">MK_REP</option>
+                    <option value="IT_PROG">IT_PROG</option>
+                    <option value="AD_VP">AD_VP</option>
+                    <option value="FI_ACCOUNT">FI_ACCOUNT</option>
+                    <option value="PU_MAN">PU_MAN</option>
+                    <option value="PU_CLERK">PU_CLERK</option>
+                    <option value="ST_MAN">ST_MAN</option>
+                    <option value="ST_CLERK">ST_CLERK</option>
+                    <option value="SA_MAN">SA_MAN</option>
+                    <option value="SA_REP">SA_REP</option>
+                    <option value="SH_CLERK">SH_CLERK</option>
+                    <option value="HR_REP">HR_REP</option>
+                    <option val ue="AC_ACCOUNT">AC_ACCOUNT</option>
+                    <option value="AD_PRES">AD_PRES</option>
+                </select>
+                <span *ngIf="jobId.touched && !jobId.valid">Select the Job Id</span>
+            </div>
+            <div class="mb-3">
+                <label for="ManagerId" class="form-label">Manager Id</label>
+                <select class="form-select " name="managerId" ngModel #managerId="ngModel" required>
+                    <option value="100">100</option>
+                    <option value="101">101</option>
+                    <option value="102">102</option>
+                    <option value="103">103</option>
+                    <option value="108">108</option>
+                    <option value="114">114</option>
+                    <option value="120">120</option>
+                    <option value="121">121</option>
+                    <option value="122">122</option>
+                    <option value="123">123</option>
+                    <option value="124">124</option>
+                    <option value="145">145</option>
+                    <option value="146">146</option>
+                    <option val ue="147">147</option>
+                    <option value="148">148</option>
+                </select>
+                <span *ngIf="managerId.touched && !managerId.valid">Select the Manager Id</span>
+            </div>
+            <div class="mb-3">
+                <label for="DepartmentId" class="form-label">Department Id</label>
+                <select class="form-select " name="departmentId" ngModel #departmentId="ngModel" required>
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                    <option value="30">30</option>
+                    <option value="40">40</option>
+                    <option value="50">50</option>
+                    <option value="60">60</option>
+                    <option value="70">70</option>
+                    <option value="80">80</option>
+                    <option value="90">90</option>
+                    <option value="100">100</option>
+                </select>
+                <span *ngIf="departmentId.touched && !departmentId.valid">Select the Department Id</span>
+            </div>
+        </div>
+    </div>
+    <button class="btn btn-primary " [disabled]="!createEmployeeForm.valid">Submit</button>
+</form>

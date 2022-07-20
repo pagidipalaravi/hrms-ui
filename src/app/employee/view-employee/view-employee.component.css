@@ -1,0 +1,18 @@
+table, th, td {
+    border: 1px solid black;
+    border-collapse:collapse;
+    width:auto;
+    }
+    
+    th {	text-align: center;
+            background-color:#a7b6d9;
+           
+    }
+    td {	text-align: center;
+    }
+    
+    
+    table{
+        margin-top: 75px;
+
+    }
