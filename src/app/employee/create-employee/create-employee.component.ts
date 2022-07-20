@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { observable } from 'rxjs';
 import { EmployeeService } from 'src/app/service/EmployeeService';
 
@@ -42,10 +43,12 @@ export class CreateEmployeeComponent implements OnInit {
   this.employee.commisionPct=;
   this.employee.departmentId=;*/
 
-   const Observable = this.createEmployeeService.createEmployee(this.employee);
-   Observable.subscribe();
+   
   }
 
-  ngSubmit():void{}
+  onSubmit(createEmployeeForm:NgForm):void{
+    const Observable = this.createEmployeeService.createEmployee(this.employee);
+   Observable.subscribe();
+  }
 
 }

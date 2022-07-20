@@ -25,6 +25,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +40,8 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     DeleteEmployeeComponent,
     HomeComponent,
     AboutusComponent,
-    ContactComponent
+    ContactComponent,
+    
   ],
   imports: [
     BrowserModule,
