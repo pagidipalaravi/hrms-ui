@@ -35,11 +35,9 @@ export class CreateEmployeeComponent implements OnInit {
       data => {
         if (data.status === 200) {
           alert("Employees are created successfuly");
-
-
-        }
+ }
+}
         else {
-
           this.message = data.statusText;
         }
       },
