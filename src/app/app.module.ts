@@ -15,11 +15,14 @@ import { DeleteEmployeeComponent } from './employee/delete-employee/delete-emplo
 import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { EmployeeService } from './service/EmployeeService';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AboutusComponent } from './navigation/bottom-navigation/aboutus/aboutus.component';
 import { ContactComponent } from './navigation/bottom-navigation/contact/contact.component'
 import { NgxPaginationModule } from 'ngx-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { DepartmentService } from './service/DepartmentService';
+import { JobService } from './service/JobService';
+
 
 
 
@@ -41,18 +44,19 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     HomeComponent,
     AboutusComponent,
     ContactComponent,
-    
-  ],
+],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
     NgxPaginationModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+    ReactiveFormsModule,
+
 ],
 
-  providers: [EmployeeService],
+  providers: [EmployeeService, DepartmentService, JobService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

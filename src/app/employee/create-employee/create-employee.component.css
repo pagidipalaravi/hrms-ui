@@ -1,21 +1,30 @@
-button{
+button {
   margin-left: 670px;
   width: 200px;
 }
-input select{
-    width: 80%;
+
+input select {
+  width: 80%;
 }
 
-.mb-3{
-    margin-left: 60px;
-    margin-right: 60px;
+.mb-3 {
+  margin-left: 60px;
+  margin-right: 60px;
 }
+
 input.ng-touched.ng-invalid {
-    border-color: red;
-  }
-  select.ng-touched.ng-invalid {
-    border-color: red;
+  border-color: red;
 }
 
-  
+select.ng-touched.ng-invalid {
+  border-color: red;
+}
 
+.star {
+  color: red;
+}
+
+
+.alert {
+  color: red;
+}
