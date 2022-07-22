@@ -18,4 +18,8 @@ baseUrl:string="http://localhost:6010/employees/";
   getDepartment():Observable<any>{
     return this.http.get<any>(this.baseUrl);
   }
+  getEmail(email:string):Observable<any>{
+    return this.http.get<any>(this.baseUrl+"get/"+email);
+  }
+
 }
