@@ -22,12 +22,9 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { DepartmentService } from './service/DepartmentService';
 import { JobService } from './service/JobService';
-
-
-
-
-
-
+import { LoginComponent } from './auth/login/login.component';
+import { LogoutComponent } from './auth/logout/logout.component';
+import { AuthService } from './service/AuthService';
 
 @NgModule({
   declarations: [
@@ -44,7 +41,10 @@ import { JobService } from './service/JobService';
     HomeComponent,
     AboutusComponent,
     ContactComponent,
-],
+    LoginComponent,
+    LogoutComponent,
+  ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -53,10 +53,9 @@ import { JobService } from './service/JobService';
     NgxPaginationModule,
     Ng2SearchPipeModule,
     ReactiveFormsModule,
+  ],
 
-],
-
-  providers: [EmployeeService, DepartmentService, JobService],
+  providers: [EmployeeService, DepartmentService, JobService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
