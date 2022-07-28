@@ -20,6 +20,13 @@ import { AboutusComponent } from './navigation/bottom-navigation/aboutus/aboutus
 import { ContactComponent } from './navigation/bottom-navigation/contact/contact.component'
 import { NgxPaginationModule } from 'ngx-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
+import { DepartmentService } from './service/DepartmentService';
+import { JobService } from './service/JobService';
+import { LoginComponent } from './auth/login/login.component';
+import { LogoutComponent } from './auth/logout/logout.component';
+
+
 import { DepartmentService } from './service/DepartmentService';
 import { JobService } from './service/JobService';
 
@@ -44,6 +51,13 @@ import { JobService } from './service/JobService';
     HomeComponent,
     AboutusComponent,
     ContactComponent,
+
+    
+  ],
+    LoginComponent,
+    LogoutComponent,
+
+],
 ],
   imports: [
     BrowserModule,

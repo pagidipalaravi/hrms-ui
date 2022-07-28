@@ -67,6 +67,37 @@
                 </div>
             </div>
             <div class="mb-3">
+
+                <label for="JobId" class="form-label">Job Id</label>
+                <select class="form-select" aria-label="Default select example" name="jobId" ngModel #jobId="ngModel"
+                    required>
+                    <option value="AD_PRES">AD_PRES</option>
+                    <option value="MK_REP">MK_REP</option>
+                    <option value="IT_PROG">IT_PROG</option>
+                    <option value="AD_VP">AD_VP</option>
+                    <option value="FI_ACCOUNT">FI_ACCOUNT</option>
+                    <option value="PU_MAN">PU_MAN</option>
+                    <option value="PU_CLERK">PU_CLERK</option>
+                    <option value="ST_MAN">ST_MAN</option>
+                    <option value="ST_CLERK">ST_CLERK</option>
+                    <option value="SA_MAN">SA_MAN</option>
+                    <option value="SA_REP">SA_REP</option>
+                    <option value="SH_CLERK">SH_CLERK</option>
+                    <option value="HR_REP">HR_REP</option>
+                    <option val ue="AC_ACCOUNT">AC_ACCOUNT</option>
+                    <option value="AD_PRES">AD_PRES</option>
+                <label for="DepartmentId" class="form-label">Department Name</label>
+                    <select class="form-select " name="departmentId" ngModel #departmentId="ngModel" required>
+                    <option *ngFor="let department of departments;" value="{{department.departmentId}}">
+                        {{department.departmentName}}</option>
+                </select>
+                <span *ngIf="departmentId.touched && !departmentId.valid">Select the Department Name</span>
+            </div>
+            <div class="mb-3">
+                <label for="JobId" class="form-label">Job Name</label>
+                <select class="form-select" name="jobId" ngModel #jobId="ngModel" required>
+                    <option *ngFor="let job of jobs;" value="{{job.jobTitle}}">{{job.jobTitle}}</option>
+
                 <label for="JobId" class="form-label">Job Name</label>
                 <select class="form-select" name="jobId" ngModel #jobId="ngModel"
                     required>
@@ -95,6 +126,7 @@
                 </select>
                 <span *ngIf="managerId.touched && !managerId.valid">Select the Manager Name</span>
             </div>
+
             <div class="mb-3">
                 <label for="DepartmentId" class="form-label">Department Name</label>
 
@@ -104,6 +136,7 @@
                 </select>
                 <span *ngIf="departmentId.touched && !departmentId.valid">Select the Department Name</span>
             </div>
+
         </div>
     </div>
     <!-- <button class="btn btn-link" (click)="resetForm;" >Reset</button> -->

@@ -74,6 +74,9 @@ export class CreateEmployeeComponent implements OnInit {
       }
     );
   }
+
+}
+
   onKey(event: any) {
     let value = event.target.value;
     this.employeeService.getEmail(value).subscribe(
@@ -112,5 +115,6 @@ export class CreateEmployeeComponent implements OnInit {
   //     this.createEmployeeForm.reset();
   // }
 }
+
 
 

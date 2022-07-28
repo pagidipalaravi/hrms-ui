@@ -15,11 +15,25 @@ baseUrl:string="http://localhost:6010/employees/";
     const employeeJsonString = JSON.stringify(employeeObj);
     return this.http.post<any>(this.baseUrl, employeeJsonString);
   }
+
   getDepartment():Observable<any>{
     return this.http.get<any>(this.baseUrl);
   }
+
+  // getDepartment():Observable<any>{
+  //   return this.http.get<any>(this.baseUrl);
+  // }
   getEmail(email:string):Observable<any>{
     return this.http.get<any>(this.baseUrl+"get/"+email);
   }
+  getEmployeeByDepartmentId():Observable<any>{
+    return this.http.get<any>(this.baseUrl+"getEmployeeByDepartmentId/{id}");
+  }
+
+
+  getEmail(email:string):Observable<any>{
+    return this.http.get<any>(this.baseUrl+"get/"+email);
+  }
+
 
 }
