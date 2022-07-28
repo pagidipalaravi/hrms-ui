@@ -48,6 +48,7 @@
                 <span *ngIf="salary.touched && !salary.valid">Enter the salary</span>
             </div>
             <div class="mb-3">
+<<<<<<< Updated upstream
                 <label for="JobId" class="form-label">Job Id</label>
                 <select class="form-select" aria-label="Default select example" name="jobId" ngModel #jobId="ngModel"
                     required>
@@ -66,6 +67,19 @@
                     <option value="HR_REP">HR_REP</option>
                     <option val ue="AC_ACCOUNT">AC_ACCOUNT</option>
                     <option value="AD_PRES">AD_PRES</option>
+=======
+                <label for="DepartmentId" class="form-label">Department Name</label>
+                    <select class="form-select " name="departmentId" ngModel #departmentId="ngModel" required>
+                    <option *ngFor="let department of departments;" value="{{department.departmentId}}">
+                        {{department.departmentName}}</option>
+                </select>
+                <span *ngIf="departmentId.touched && !departmentId.valid">Select the Department Name</span>
+            </div>
+            <div class="mb-3">
+                <label for="JobId" class="form-label">Job Name</label>
+                <select class="form-select" name="jobId" ngModel #jobId="ngModel" required>
+                    <option *ngFor="let job of jobs;" value="{{job.jobTitle}}">{{job.jobTitle}}</option>
+>>>>>>> Stashed changes
                 </select>
                 <span *ngIf="jobId.touched && !jobId.valid">Select the Job Id</span>
             </div>
@@ -90,6 +104,7 @@
                 </select>
                 <span *ngIf="managerId.touched && !managerId.valid">Select the Manager Id</span>
             </div>
+<<<<<<< Updated upstream
             <div class="mb-3">
                 <label for="DepartmentId" class="form-label">Department Id</label>
                 <select class="form-select " name="departmentId" ngModel #departmentId="ngModel" required>
@@ -106,6 +121,9 @@
                 </select>
                 <span *ngIf="departmentId.touched && !departmentId.valid">Select the Department Id</span>
             </div>
+=======
+
+>>>>>>> Stashed changes
         </div>
     </div>
     <button class="btn btn-primary " [disabled]="!createEmployeeForm.valid">Submit</button>

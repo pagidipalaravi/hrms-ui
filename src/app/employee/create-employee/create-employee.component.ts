@@ -44,4 +44,47 @@ export class CreateEmployeeComponent implements OnInit {
       }
     );
   }
+<<<<<<< Updated upstream
 }
+=======
+  onKey(event: any) {
+    let value = event.target.value;
+    this.employeeService.getEmail(value).subscribe(
+      data => {
+        if (data.status === 200) {
+          alert("Email ID already exists, Please try another");
+          this.error = true;
+        }
+        else {
+          console.log("Email ID does not exist");
+        }
+      }
+    )
+  }
+
+  presentDate: any;
+
+  DateDisable() {
+    let date: any = new Date();
+    let todayDate: any = date.getDate();
+    let month: any = date.getMonth() + 1;
+    let year: any = date.getFullYear();
+    
+    if (todayDate < 10) {
+      todayDate = "0" + todayDate;
+    }
+
+    if (month < 10) {
+      month = "0" + month;
+    }
+    this.presentDate = year + "-" + month + "-" + todayDate;
+    console.log(date);
+  }
+
+  //   resetForm() {
+  //     this.createEmployeeForm.reset();
+  // }
+}
+
+
+>>>>>>> Stashed changes

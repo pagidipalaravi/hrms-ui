@@ -20,6 +20,14 @@ import { AboutusComponent } from './navigation/bottom-navigation/aboutus/aboutus
 import { ContactComponent } from './navigation/bottom-navigation/contact/contact.component'
 import { NgxPaginationModule } from 'ngx-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+<<<<<<< Updated upstream
+=======
+import { DepartmentService } from './service/DepartmentService';
+import { JobService } from './service/JobService';
+import { LoginComponent } from './auth/login/login.component';
+import { LogoutComponent } from './auth/logout/logout.component';
+
+>>>>>>> Stashed changes
 
 
 
@@ -41,8 +49,15 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     HomeComponent,
     AboutusComponent,
     ContactComponent,
+<<<<<<< Updated upstream
     
   ],
+=======
+    LoginComponent,
+    LogoutComponent,
+
+],
+>>>>>>> Stashed changes
   imports: [
     BrowserModule,
     AppRoutingModule,
