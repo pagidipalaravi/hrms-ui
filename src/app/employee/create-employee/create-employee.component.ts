@@ -26,7 +26,7 @@ export class CreateEmployeeComponent implements OnInit {
   employeeBean: EmployeeBean = new EmployeeBean("", "", "", 0, new Date(""), 0, "", 0, 0);
   ngOnInit(): void {
     this.DateDisable();
-    
+
     this.departmentService.getDepartment().subscribe(
       data => {
         if (data.status === 200) {
@@ -75,7 +75,7 @@ export class CreateEmployeeComponent implements OnInit {
     );
   }
 
-}
+
 
   onKey(event: any) {
     let value = event.target.value;

@@ -14,26 +14,26 @@ import { AuthService } from 'src/app/service/AuthService';
 export class LoginComponent implements OnInit {
   public router: Router;
   public loginForm: FormGroup;
-  public userName:AbstractControl;
-  public passWord:AbstractControl;
+  public userName: AbstractControl;
+  public passWord: AbstractControl;
 
-  constructor(router: Router, fb:FormBuilder, private authService:AuthService) {
-    this.router=router;
-    this.loginForm=fb.group({
-      'userName':[''],
-      'passWord':['']
+  constructor(router: Router, fb: FormBuilder, private authService: AuthService) {
+    this.router = router;
+    this.loginForm = fb.group({
+      'userName': [''],
+      'passWord': ['']
     });
 
     this.userName = this.loginForm.controls['userName'];
     this.passWord = this.loginForm.controls['passWord'];
 
-   }
+  }
 
-  ngOnInit(): void {}
-  
-  
-  
-  public onSubmit(values:Object):void{
+  ngOnInit(): void { }
+
+
+
+  public onSubmit(values: Object): void {
     // if(this.loginForm.valid){
     //   this.authService.login(this.loginForm.value);
     // }
