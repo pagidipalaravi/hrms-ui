@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { EmployeeBean } from 'src/app/Bean/employeeBean';
+import { DepartmentService } from 'src/app/service/DepartmentService';
 import { EmployeeService } from 'src/app/service/EmployeeService';
+import { JobService } from 'src/app/service/JobService';
+
+
 
 @Component({
   selector: 'app-create-employee',
@@ -14,12 +18,38 @@ export class CreateEmployeeComponent implements OnInit {
   departments: any = [];
   managers: any = [];
   message: any;
-  constructor(private createEmployeeService: EmployeeService) { }
-  employeeBean: EmployeeBean = new EmployeeBean(0, "", "", "", 0, new Date(""), 0, "", 0, 0);
+  values = '';
+  error: boolean = false;
+
+
+  constructor(private employeeService: EmployeeService, private departmentService: DepartmentService, private jobService: JobService) { }
+  employeeBean: EmployeeBean = new EmployeeBean("", "", "", 0, new Date(""), 0, "", 0, 0);
   ngOnInit(): void {
+    this.DateDisable();
+    
+    this.departmentService.getDepartment().subscribe(
+      data => {
+        if (data.status === 200) {
+          console.log(data.result);
+          this.departments = data.result;
+        }
+        else {
+          this.message = data.statusText;
+        }
+      });
+
+    this.jobService.getJob().subscribe(
+      data => {
+        if (data.status === 200) {
+          console.log(data.result);
+          this.jobs = data.result;
+        }
+        else {
+          this.message = data.statusText;
+        }
+      });
   }
   onSubmit(createEmployeeForm: NgForm) {
-    this.employeeBean.employeeId = createEmployeeForm.value.employeeId;
     this.employeeBean.firstName = createEmployeeForm.value.firstName;
     this.employeeBean.lastName = createEmployeeForm.value.lastName;
     this.employeeBean.email = createEmployeeForm.value.email;
@@ -29,7 +59,7 @@ export class CreateEmployeeComponent implements OnInit {
     this.employeeBean.jobId = createEmployeeForm.value.jobId;
     this.employeeBean.managerId = createEmployeeForm.value.managerId;
     this.employeeBean.departmentId = createEmployeeForm.value.departmentId;
-    this.createEmployeeService.createEmployee(this.employeeBean).subscribe(
+    this.employeeService.createEmployee(this.employeeBean).subscribe(
       data => {
         if (data.status === 200) {
           alert("Employees are created successfuly");
@@ -44,9 +74,9 @@ export class CreateEmployeeComponent implements OnInit {
       }
     );
   }
-<<<<<<< Updated upstream
+
 }
-=======
+
   onKey(event: any) {
     let value = event.target.value;
     this.employeeService.getEmail(value).subscribe(
@@ -69,7 +99,7 @@ export class CreateEmployeeComponent implements OnInit {
     let todayDate: any = date.getDate();
     let month: any = date.getMonth() + 1;
     let year: any = date.getFullYear();
-    
+
     if (todayDate < 10) {
       todayDate = "0" + todayDate;
     }
@@ -87,4 +117,4 @@ export class CreateEmployeeComponent implements OnInit {
 }
 
 
->>>>>>> Stashed changes
+

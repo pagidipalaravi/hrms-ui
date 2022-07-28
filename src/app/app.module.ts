@@ -15,19 +15,21 @@ import { DeleteEmployeeComponent } from './employee/delete-employee/delete-emplo
 import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { EmployeeService } from './service/EmployeeService';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AboutusComponent } from './navigation/bottom-navigation/aboutus/aboutus.component';
 import { ContactComponent } from './navigation/bottom-navigation/contact/contact.component'
 import { NgxPaginationModule } from 'ngx-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
-<<<<<<< Updated upstream
-=======
+
 import { DepartmentService } from './service/DepartmentService';
 import { JobService } from './service/JobService';
 import { LoginComponent } from './auth/login/login.component';
 import { LogoutComponent } from './auth/logout/logout.component';
 
->>>>>>> Stashed changes
+
+import { DepartmentService } from './service/DepartmentService';
+import { JobService } from './service/JobService';
+
 
 
 
@@ -49,25 +51,26 @@ import { LogoutComponent } from './auth/logout/logout.component';
     HomeComponent,
     AboutusComponent,
     ContactComponent,
-<<<<<<< Updated upstream
+
     
   ],
-=======
     LoginComponent,
     LogoutComponent,
 
 ],
->>>>>>> Stashed changes
+],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
     NgxPaginationModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+    ReactiveFormsModule,
+
 ],
 
-  providers: [EmployeeService],
+  providers: [EmployeeService, DepartmentService, JobService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
