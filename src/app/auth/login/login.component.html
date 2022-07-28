@@ -13,12 +13,12 @@
                 <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)" class="text-left mt-4">
                     <div class="form-group">
                         <input type="text" class="form-control mt-4" placeholder="User Name" name="userName" ngModel
-                            #userName="ngModel" required>
+                            #userName="ngModel" required autocomplete="off">
                         <small *ngIf="userName.touched && !userName.valid" class="alert">
                             <span *ngIf="userName.errors?.['required']">User Name Required</span>
                         </small>
                         <input type="text" class="form-control mt-4" placeholder="Password" name="passWord" ngModel
-                            #passWord="ngModel" required>
+                            #passWord="ngModel" required autocomplete="off">
                         <small *ngIf="passWord.touched && !passWord.valid" class="alert">
                             <span *ngIf="passWord.errors?.['required']">Password Required</span>
                         </small>
