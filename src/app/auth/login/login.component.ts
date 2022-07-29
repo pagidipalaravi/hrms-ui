@@ -11,7 +11,7 @@ import { AuthService } from 'src/app/service/AuthService';
 export class LoginComponent implements OnInit {
 
   public loginForm: FormGroup;
-<<<<<<< Updated upstream
+
   public userName:AbstractControl;
   public passWord:AbstractControl;
 
@@ -20,22 +20,28 @@ export class LoginComponent implements OnInit {
     this.loginForm=fb.group({
       'userName':[''],
       'passWord':['']
+  public userName: AbstractControl;
+  public passWord: AbstractControl;
+
+  constructor(router: Router, fb: FormBuilder, private authService: AuthService) {
+    this.router = router;
+    this.loginForm = fb.group({
+      'userName': [''],
+      'passWord': ['']
     });
 
     this.userName = this.loginForm.controls['userName'];
     this.passWord = this.loginForm.controls['passWord'];
+    }
 
-   }
+  ngOnInit(): void { }
 
-  ngOnInit(): void {}
-  
-  
-  
-  public onSubmit(values:Object):void{
+
+
+  public onSubmit(values: Object): void {
     // if(this.loginForm.valid){
     //   this.authService.login(this.loginForm.value);
     // }
-=======
   username: string = "";
   password: string = "";
 
@@ -75,6 +81,5 @@ export class LoginComponent implements OnInit {
         //this.isLoggedIn = "true";
       }
     })
->>>>>>> Stashed changes
   }
 }
