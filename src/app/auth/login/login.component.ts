@@ -1,5 +1,5 @@
 import { Component, OnInit, Output } from '@angular/core';
-import { NgForm, FormBuilder, FormGroup } from '@angular/forms';
+import { NgForm, FormBuilder, FormGroup, AbstractControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/service/AuthService';
 
@@ -8,40 +8,10 @@ import { AuthService } from 'src/app/service/AuthService';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
+
 export class LoginComponent implements OnInit {
 
   public loginForm: FormGroup;
-
-  public userName:AbstractControl;
-  public passWord:AbstractControl;
-
-  constructor(router: Router, fb:FormBuilder, private authService:AuthService) {
-    this.router=router;
-    this.loginForm=fb.group({
-      'userName':[''],
-      'passWord':['']
-  public userName: AbstractControl;
-  public passWord: AbstractControl;
-
-  constructor(router: Router, fb: FormBuilder, private authService: AuthService) {
-    this.router = router;
-    this.loginForm = fb.group({
-      'userName': [''],
-      'passWord': ['']
-    });
-
-    this.userName = this.loginForm.controls['userName'];
-    this.passWord = this.loginForm.controls['passWord'];
-    }
-
-  ngOnInit(): void { }
-
-
-
-  public onSubmit(values: Object): void {
-    // if(this.loginForm.valid){
-    //   this.authService.login(this.loginForm.value);
-    // }
   username: string = "";
   password: string = "";
 

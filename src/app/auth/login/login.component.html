@@ -8,28 +8,16 @@
                 <h2>Aktrix Login</h2>
                 <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)" class="text-left mt-4">
                     <div class="form-group">
-<<<<<<< Updated upstream
-                        <input type="text" class="form-control mt-4" placeholder="User Name" name="userName" ngModel
-                            #userName="ngModel" required>
-                        <small *ngIf="userName.touched && !userName.valid" class="alert">
-                            <span *ngIf="userName.errors?.['required']">User Name Required</span>
-                        </small>
-                        <input type="text" class="form-control mt-4" placeholder="Password" name="passWord" ngModel
-                            #passWord="ngModel" required>
-                        <small *ngIf="passWord.touched && !passWord.valid" class="alert">
-                            <span *ngIf="passWord.errors?.['required']">Password Required</span>
-=======
                         <input type="text" class="form-control mt-4" placeholder="User Name" name="username" ngModel
                             #username="ngModel" required autocomplete="off">
                         <small *ngIf="username.touched && !username.valid" class="alert">
                             <span *ngIf="username.errors?.['required']">User Name Required</span>
                         </small>
                         <input type="password" class="form-control mt-4" placeholder="Password" name="password" ngModel
-                            #password="ngModel" minlength="6" maxlength="6" required autocomplete="off">
+                            #password="ngModel" minlength="8" maxlength="8" required autocomplete="off">
                         <small *ngIf="password.touched && !password.valid" class="alert">
                             <span *ngIf="password.errors?.['required']">Password Required</span>
-                            <span *ngIf="password.errors?.['minlength']">Password Must be of 6 characters</span>
->>>>>>> Stashed changes
+                            <span *ngIf="password.errors?.['minlength']">Password Must be of 8 characters</span>
                         </small>
                     </div>
                     <div class="form-group">
