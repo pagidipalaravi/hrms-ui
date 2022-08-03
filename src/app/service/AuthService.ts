@@ -4,7 +4,7 @@ import { Injectable } from "@angular/core";
 @Injectable()
 export class AuthService {
 
-    baseUrl = "http://localhost:6010";
+    baseUrl = "http://localhost:6010/";
     public redirectUrl: any;
 
     constructor(public httpClient: HttpClient) { }
