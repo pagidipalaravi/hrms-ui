@@ -6,31 +6,29 @@ import { EmployeeBean } from '../Bean/employeeBean';
 @Injectable()
 export class EmployeeService {
   baseUrl: string = "http://localhost:6010/employees/";
-  token: string | null = sessionStorage.getItem("token");
-  constructor(private http: HttpClient) { }
+  token: string | null = sessionStorage.getItem('token');
+
+  constructor(private httpClient: HttpClient) { }
 
   getEmployee(): Observable<any> {
-    let httpHeaders = new HttpHeaders({ 'Authorization':'Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJyYXZpIiwic2NvcGVzIjpbeyJhdXRob3JpdHkiOiJST0xFX0FETUlOIn1dLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0LmNvbSIsImlhdCI6MTY1OTUyNzkzNywiZXhwIjoxNjU5NTQ1OTM3fQ.zkiQ466YBmFqOMdsXdNX4wtQ1wircyujarsKoUVXCoI' })
-    let httpOptions = { headers: httpHeaders }
-    return this.http.get<any>(this.baseUrl, httpOptions);
+    // let httpHeaders = new HttpHeaders({ 'Authorization':'Bearer '+ this.token});
+    // let httpOptions = { headers: httpHeaders }
+    // return this.httpClient.get<any>(this.baseUrl, httpOptions);
+    return this.httpClient.get<any>(this.baseUrl);
 
   }
   createEmployee(employeeObj: EmployeeBean): Observable<any> {
     const employeeJsonString = JSON.stringify(employeeObj);
-    return this.http.post<any>(this.baseUrl, employeeJsonString);
+    return this.httpClient.post<any>(this.baseUrl, employeeJsonString);
   }
 
   getDepartment(): Observable<any> {
-    return this.http.get<any>(this.baseUrl);
+    return this.httpClient.get<any>(this.baseUrl);
   }
-
-  // getDepartment():Observable<any>{
-  //   return this.http.get<any>(this.baseUrl);
-  // }
   getEmail(email: string): Observable<any> {
-    return this.http.get<any>(this.baseUrl + "get/" + email);
+    return this.httpClient.get<any>(this.baseUrl + "get/" + email);
   }
   getEmployeeByDepartmentId(): Observable<any> {
-    return this.http.get<any>(this.baseUrl + "getEmployeeByDepartmentId/{id}");
+    return this.httpClient.get<any>(this.baseUrl + "getEmployeeByDepartmentId/{id}");
   }
 }

@@ -13,7 +13,7 @@ import { ViewEmployeeComponent } from './employee/view-employee/view-employee.co
 import { UpdateEmployeeComponent } from './employee/update-employee/update-employee.component';
 import { DeleteEmployeeComponent } from './employee/delete-employee/delete-employee.component';
 import { HomeComponent } from './home/home.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { EmployeeService } from './service/EmployeeService';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AboutusComponent } from './navigation/bottom-navigation/aboutus/aboutus.component';
@@ -25,6 +25,7 @@ import { JobService } from './service/JobService';
 import { LoginComponent } from './auth/login/login.component';
 import { LogoutComponent } from './auth/logout/logout.component';
 import { AuthService } from './service/AuthService';
+import { TokenInterceptor } from './interceptor/TokenInterceptor ';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,17 @@ import { AuthService } from './service/AuthService';
     ReactiveFormsModule,
   ],
 
-  providers: [EmployeeService, DepartmentService, JobService, AuthService],
+  providers: [
+    EmployeeService, 
+    DepartmentService,
+    JobService,
+    AuthService,
+    {  
+      provide: HTTP_INTERCEPTORS,  
+      useClass: TokenInterceptor,  
+      multi: true  
+    } 
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
