@@ -14,10 +14,10 @@
                             <span *ngIf="username.errors?.['required']">User Name Required</span>
                         </small>
                         <input type="password" class="form-control mt-4" placeholder="Password" name="password" ngModel
-                            #password="ngModel" minlength="8" maxlength="8" required autocomplete="off">
+                            #password="ngModel" minlength="4" maxlength="4" required autocomplete="off">
                         <small *ngIf="password.touched && !password.valid" class="alert">
                             <span *ngIf="password.errors?.['required']">Password Required</span>
-                            <span *ngIf="password.errors?.['minlength']">Password Must be of 8 characters</span>
+                            <span *ngIf="password.errors?.['minlength']">Password Must be of 4 characters</span>
                         </small>
                     </div>
                     <div class="form-group">
