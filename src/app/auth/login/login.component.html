@@ -1,0 +1,41 @@
+<div class="d-flex justify-content-center align-items-center  w-100 h-100 login-container" style="margin-top:200px">
+    <div class="col-xl-4 col-md-6 col-10">
+        <div class="card border=0 box-shadow rounded-0">
+            <div class="card-header d-flex justify-content-center" style="background-color: rgb(12, 12, 0)">
+                <span class="ng text-light" style="font: size 22px; margin-top: 1px; ">AKTRIX</span>
+            </div>
+            <div class="card-body text-center  text-dark">
+                <h2>Aktrix Login</h2>
+                <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)" class="text-left mt-4">
+                    <div class="form-group">
+                        <input type="text" class="form-control mt-4" placeholder="User Name" name="username" ngModel
+                            #username="ngModel" required autocomplete="off">
+                        <small *ngIf="username.touched && !username.valid" class="alert">
+                            <span *ngIf="username.errors?.['required']">User Name Required</span>
+                        </small>
+                        <input type="password" class="form-control mt-4" placeholder="Password" name="password" ngModel
+                            #password="ngModel" minlength="4" maxlength="4" required autocomplete="off">
+                        <small *ngIf="password.touched && !password.valid" class="alert">
+                            <span *ngIf="password.errors?.['required']">Password Required</span>
+                            <span *ngIf="password.errors?.['minlength']">Password Must be of 4 characters</span>
+                        </small>
+                        <input type="text" class="form-control mt-4" placeholder="User Name" name="userName" ngModel
+                            #userName="ngModel" required autocomplete="off">
+                        <small *ngIf="userName.touched && !userName.valid" class="alert">
+                            <span *ngIf="userName.errors?.['required']">User Name Required</span>
+                        </small>
+                        <input type="text" class="form-control mt-4" placeholder="Password" name="passWord" ngModel
+                            #passWord="ngModel" required autocomplete="off">
+                        <small *ngIf="passWord.touched && !passWord.valid" class="alert">
+                            <span *ngIf="passWord.errors?.['required']">Password Required</span>
+                        </small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <button [disabled]="!loginForm.valid" class="btn btn-dark mt-4" type="submit">Sign In</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
