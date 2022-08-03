@@ -1,42 +1,57 @@
-import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormBuilder, FormGroup } from '@angular/forms';
+import { Component, OnInit, Output } from '@angular/core';
+import { NgForm, FormBuilder, FormGroup, AbstractControl } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Subscription } from 'rxjs/internal/Subscription';
 import { AuthService } from 'src/app/service/AuthService';
-
-
+const TOKEN_KEY = 'AuthToken';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
+
 export class LoginComponent implements OnInit {
-  public router: Router;
+
   public loginForm: FormGroup;
-  public userName: AbstractControl;
-  public passWord: AbstractControl;
+  username: string = "";
+  password: string = "";
+  message: string = '';
+  error: boolean = false;
+  loginMessage: boolean = false;
+  successMessage: string = "";
+  errorMessage: string = "";
+  @Output() isLoggedIn = "false";
 
-  constructor(router: Router, fb: FormBuilder, private authService: AuthService) {
+  constructor(private router: Router, private formBuilder: FormBuilder, private authService: AuthService) {
     this.router = router;
-    this.loginForm = fb.group({
-      'userName': [''],
-      'passWord': ['']
+    this.loginForm = formBuilder.group({
+      'username': [''],
+      'password': ['']
     });
-
-    this.userName = this.loginForm.controls['userName'];
-    this.passWord = this.loginForm.controls['passWord'];
-
   }
 
   ngOnInit(): void { }
 
+  public onSubmit(loginForm: NgForm): void {
+    if (this.loginForm.invalid) {
+      return;
+    }
+    const loginRequestObject = {
+      username: loginForm.value.username,
+      password: loginForm.value.password
+    }
+    console.log(loginRequestObject);
+    this.authService.login(loginRequestObject).subscribe(data => {
+      if (data.status === 200) {
+        sessionStorage.setItem(TOKEN_KEY, data.result.token);
+        sessionStorage.setItem('userName', loginRequestObject.username);
+        console.log("Login Successful");
+        this.router.navigate(['viewemployee']);
+        //this.invalidLogin = false;
+        //this.loginSuccess = true;
+        //this.isLoggedIn = "true";
 
-
-  public onSubmit(values: Object): void {
-    // if(this.loginForm.valid){
-    //   this.authService.login(this.loginForm.value);
-    // }
+      }
+    })
   }
-
 }
