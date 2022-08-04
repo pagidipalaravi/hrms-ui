@@ -50,7 +50,6 @@ export class LoginComponent implements OnInit {
         //this.invalidLogin = false;
         //this.loginSuccess = true;
         //this.isLoggedIn = "true";
-
       }
     })
   }
