@@ -5,11 +5,11 @@ import { Injectable } from '@angular/core';
 @Injectable()  
   export class TokenInterceptor implements HttpInterceptor {  
     constructor(public authService: AuthService) {
-        console.log("TokenInterceptor");
+        console.log("TokenInterceptor constructor");
     }  
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {  
         const token = sessionStorage.getItem('token');
-        console.log("token = "+token)
+        console.log("intercept method token = "+token)
         if(token == null || token == ""){
             console.log("if block");
             return next.handle(request);  

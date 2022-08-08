@@ -2,7 +2,6 @@ import { Component, OnInit, Output } from '@angular/core';
 import { NgForm, FormBuilder, FormGroup, AbstractControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/service/AuthService';
-const TOKEN_KEY = 'AuthToken';
 
 @Component({
   selector: 'app-login',
@@ -37,7 +36,7 @@ export class LoginComponent implements OnInit {
     console.log(loginRequestObject);
     this.authService.login(loginRequestObject).subscribe(data => {
       if (data.status === 200) {
-        sessionStorage.setItem(TOKEN_KEY, data.result.token);
+        sessionStorage.setItem("token", data.result.token);
         sessionStorage.setItem('username', loginRequestObject.username);
         console.log("Login Successful");
         this.router.navigate(['viewemployee']);
