@@ -1,6 +1,3 @@
-<div class="sec1">
-    <input type="text" placeholder="Search" [(ngModel)]="searchText"><br><br>
-</div>
 <div>
     <table>
         <thead class="sticky-top">
@@ -20,7 +17,7 @@
         </thead>
 
         <tbody>
-            <tr *ngFor="let employee of employees | filter:searchText |paginate:{itemsPerPage:count, currentPage:p}">
+            <tr *ngFor="let employee of employees |paginate:{itemsPerPage:count, currentPage:p}">
                 <td>{{employee.employeeId}}</td>
                 <td>{{employee.firstName}}</td>
                 <td>{{employee.lastName}}</td>

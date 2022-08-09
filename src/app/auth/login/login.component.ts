@@ -1,7 +1,7 @@
 import { Component, OnInit, Output } from '@angular/core';
 import { NgForm, FormBuilder, FormGroup, AbstractControl } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from 'src/app/service/AuthService';
+import { AuthenticationService } from 'src/app/service/AuthenticationService';
 
 @Component({
   selector: 'app-login',
@@ -21,9 +21,9 @@ export class LoginComponent implements OnInit {
   errorMessage: string = "";
   @Output() isLoggedIn = "false";
 
-  constructor(private router: Router, private formBuilder: FormBuilder, private authService: AuthService) {
+  constructor(private router: Router, private formBuilder: FormBuilder, private authenticationService: AuthenticationService) {
     this.router = router;
-    this.formGroup = formBuilder.group({'username': [''],'password': ['']});
+    this.formGroup = formBuilder.group({ 'username': [''], 'password': [''] });
   }
 
   ngOnInit(): void { }
@@ -32,14 +32,15 @@ export class LoginComponent implements OnInit {
     if (this.formGroup.invalid) {
       return;
     }
-    const loginRequestObject = {username: loginForm.value.username, password: loginForm.value.password}
+    const loginRequestObject = { username: loginForm.value.username, password: loginForm.value.password }
     console.log(loginRequestObject);
-    this.authService.login(loginRequestObject).subscribe(data => {
+    this.authenticationService.login(loginRequestObject).subscribe(data => {
       if (data.status === 200) {
         sessionStorage.setItem("token", data.result.token);
-        sessionStorage.setItem('username', loginRequestObject.username);
+        sessionStorage.setItem('username', data.result.username);
+        //console.log("Login Successful");
+        this.router.navigate(['home']);
         console.log("Login Successful");
-        this.router.navigate(['viewemployee']);
         //this.invalidLogin = false;
         //this.loginSuccess = true;
         //this.isLoggedIn = "true";

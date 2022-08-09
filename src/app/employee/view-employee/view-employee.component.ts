@@ -4,7 +4,7 @@ import { catchError, observable } from 'rxjs';
 import { EmployeeService } from 'src/app/service/EmployeeService';
 
 @Component({
-  selector: 'app-view-employee',
+  selector: 'view-employee',
   templateUrl: './view-employee.component.html',
   styleUrls: ['./view-employee.component.css']
 })
@@ -13,7 +13,7 @@ export class ViewEmployeeComponent implements OnInit {
   message: any;
   searchText:any;
   p:number=1;
-  count:number=50;
+  count:number=10;
 
   constructor(private viewEmployeeService:EmployeeService) { }
 

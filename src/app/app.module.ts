@@ -24,8 +24,9 @@ import { DepartmentService } from './service/DepartmentService';
 import { JobService } from './service/JobService';
 import { LoginComponent } from './auth/login/login.component';
 import { LogoutComponent } from './auth/logout/logout.component';
-import { AuthService } from './service/AuthService';
+import { AuthenticationService } from './service/AuthenticationService';
 import { TokenInterceptor } from './interceptor/TokenInterceptor ';
+import { RouteGuardService } from './service/RouteGuardService';
 
 @NgModule({
   declarations: [
@@ -60,7 +61,9 @@ import { TokenInterceptor } from './interceptor/TokenInterceptor ';
     EmployeeService, 
     DepartmentService,
     JobService,
-    AuthService,
+    AuthenticationService,
+    RouteGuardService,
+
     {  
       provide: HTTP_INTERCEPTORS,  
       useClass: TokenInterceptor,  
