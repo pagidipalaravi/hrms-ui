@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-lhs-navigation',
+  selector: 'lhs-navigation',
   templateUrl: './lhs-navigation.component.html',
   styleUrls: ['./lhs-navigation.component.css']
 })
