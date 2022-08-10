@@ -1,6 +1,4 @@
-//import { error } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
-import { catchError, observable } from 'rxjs';
 import { EmployeeService } from 'src/app/service/EmployeeService';
 
 @Component({

@@ -16,8 +16,6 @@ import { HomeComponent } from './home/home.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { EmployeeService } from './service/EmployeeService';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AboutusComponent } from './navigation/bottom-navigation/aboutus/aboutus.component';
-import { ContactComponent } from './navigation/bottom-navigation/contact/contact.component'
 import { NgxPaginationModule } from 'ngx-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { DepartmentService } from './service/DepartmentService';
@@ -41,8 +39,6 @@ import { RouteGuardService } from './service/RouteGuardService';
     UpdateEmployeeComponent,
     DeleteEmployeeComponent,
     HomeComponent,
-    AboutusComponent,
-    ContactComponent,
     LoginComponent,
     LogoutComponent,
   ],
