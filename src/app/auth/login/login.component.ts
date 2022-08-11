@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
   password: string = "";
   message: string = '';
   error: boolean = false;
-  loginMessage: boolean = false;
+  loginMessage: boolean = false;   
   successMessage: string = "";
   errorMessage: string = "";
   @Output() isLoggedIn = "false";
@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void { }
-
+ 
   public onSubmit(loginForm: NgForm): void {
     if (this.formGroup.invalid) {
       return;

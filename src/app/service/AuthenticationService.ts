@@ -3,6 +3,9 @@ import { Injectable } from "@angular/core";
 
 @Injectable()
 export class AuthenticationService {
+    logout() {
+        throw new Error('Method not implemented.');
+    }
 
     baseUrl = "http://localhost:6010/";
 
@@ -17,7 +20,7 @@ export class AuthenticationService {
     getToken() {
         sessionStorage.getItem('token');
     }
-    
+
     isAuthenticated(): boolean {
         const token = sessionStorage.getItem('token');
         if (token == null || token == "") {
@@ -26,5 +29,9 @@ export class AuthenticationService {
         else {
             return true;
         }
+    }
+    signout() {
+        sessionStorage.removeItem('token');
+        sessionStorage.clear();
     }
 }
